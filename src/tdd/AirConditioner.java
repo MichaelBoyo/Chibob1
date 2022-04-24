@@ -5,6 +5,7 @@ public class AirConditioner {
     private boolean temp;
 
     private int tempValue;
+
     public void putOn(boolean type) {
         state = type;
 
@@ -31,14 +32,17 @@ public class AirConditioner {
     }
 
     public void increaseTempValue(int value) {
-        if (value > 30){
-        tempValue = 30;}
+        if (value > 30) {
+            tempValue = 30;
+        }
     }
+
     public int getTempValue() {
         return tempValue;
     }
+
     public void reduceTempValue(int value) {
-        if(value < 16){
+        if (value < 16) {
             tempValue = 16;
         }
     }

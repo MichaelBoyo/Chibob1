@@ -6,66 +6,53 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BikeTest {
     @Test
-    public void newBikeCanBeCreatedTest() {
-        Bike okada = new Bike();
-        okada.isOn(true);
-    }
-
-    @Test
     public void theBikeCanBePutOnTest() {
-        Bike bajaj = new Bike();             // given i have a bike
-        bajaj.isOn(true);               // when i turn on the bike
+        Bike bajaj = new Bike();             // given I have a bike
+        bajaj.isOn(true);               // when I turn on the bike
         assertTrue(bajaj.checkState());      // assert that the bike is on
     }
-
     @Test
     public void theBikeCanBePutOffTest() {
-        Bike bajaj = new Bike();               // given i have a bike
+        Bike bajaj = new Bike();               // given I have a bike
         bajaj.isOn(true);                 // and it is turned on
-        bajaj.isOn(false);                // when i put off the bike
+        bajaj.isOn(false);                // when I put off the bike
         assertFalse(bajaj.checkState());       // assert that the bike is off
     }
-
     @Test
     public void engageGear() {
-        Bike suzu = new Bike();                         // given i have a bike
-        suzu.isOn(true);                           // when i put it on
-        suzu.engageGear(0);                        // and i engage gear
+        Bike suzu = new Bike();                         // given I have a bike
+        suzu.isOn(true);                           // when I put it on
+        suzu.engageGear(0);                        // and I engage gear
         assertEquals(0, suzu.checkGear());      // assert that the gear is initially  0
     }
-
-
     @Test
     public void accelerateGear1Test() {
-        Bike kawa = new Bike();                         // given i have a bike
-        kawa.isOn(true);                           // and i put it on
-        kawa.engageGear(0);                        // and i engage gear
-        kawa.accelerate(9);                       // when i accelerate and my speed is between 0 and 20
+        Bike kawa = new Bike();                         // given I have a bike
+        kawa.isOn(true);                           // and I put it on
+        kawa.engageGear(0);                        // and I engage gear
+        kawa.accelerate(9);                       // when I accelerate and my speed is between 0 and 20
         assertEquals(1, kawa.getGearNumber());  // assert that the bike enters gear 1
         assertEquals(10, kawa.getSpeedRate());  // assert that my speed changes by 1 point
 
     }
-
     @Test
     public void accelerateGear2Test() {
-        Bike boxer = new Bike();                         // given i have a bike
-        boxer.isOn(true);                           // and i put it on
+        Bike boxer = new Bike();                         // given I have a bike
+        boxer.isOn(true);                           // and I put it on
         boxer.engageGear(0);                        // and gear is engaged
-        boxer.accelerate(30);                      // when i accelerate above 20 and my speed is between 21 and 30
+        boxer.accelerate(30);                      // when I accelerate above 20 and my speed is between 21 and 30
         assertEquals(2, boxer.getGearNumber());  // assert that the bike engages gear 2
         assertEquals(32, boxer.getSpeedRate());  // assert that my speed changes by 2 points
     }
-
     @Test
     public void accelerateGear3Test() {
-        Bike yamaha = new Bike();                          // given i have a bike
-        yamaha.isOn(true);                            // and i put it on
+        Bike yamaha = new Bike();                          // given I have a bike
+        yamaha.isOn(true);                            // and I put it on
         yamaha.engageGear(0);                         // and gear is engaged
         yamaha.accelerate(40);                      // when my speed is between 31 and 40
         assertEquals(3, yamaha.getGearNumber());  // assert that the bike uses gear 3
         assertEquals(43, yamaha.getSpeedRate());  // assert that my speed changes by 3 points
     }
-
     @Test
     public void accelerateGear4Test() {
         Bike tokumbo = new Bike();
@@ -75,7 +62,6 @@ public class BikeTest {
         assertEquals(4, tokumbo.getGearNumber());  // assert that the bike uses gear 4
         assertEquals(74, tokumbo.getSpeedRate());  // assert that my speed changes by 4 points
     }
-
     @Test
     public void decelerateToGear4Test() {
         Bike jinCheng = new Bike();
@@ -86,7 +72,6 @@ public class BikeTest {
         assertEquals(4, jinCheng.getGearNumber());   // assert that the bike remains on gear 4
         assertEquals(40, jinCheng.getDecelerationSpeedRate()); // assert that the speed decreases by 4
     }
-
     @Test
     public void decelerateToGear3Test() {
         Bike jinCheng = new Bike();
@@ -97,7 +82,6 @@ public class BikeTest {
         assertEquals(3, jinCheng.getGearNumber());   // assert that the bike is on gear 3
         assertEquals(32, jinCheng.getDecelerationSpeedRate()); // assert that the speed decreases by 3
     }
-
     @Test
     public void decelerateToGear2Test() {
         Bike powerBike = new Bike();
@@ -108,7 +92,6 @@ public class BikeTest {
         assertEquals(2, powerBike.getGearNumber());      // assert that the bike is on gear 2
         assertEquals(22, powerBike.getDecelerationSpeedRate()); // assert that the speed decreases by 2
     }
-
     @Test
     public void decelerateToGear1Test() {
         Bike superBike = new Bike();
@@ -119,7 +102,6 @@ public class BikeTest {
         assertEquals(1, superBike.getGearNumber());       // assert that the bike is on gear 2
         assertEquals(14, superBike.getDecelerationSpeedRate()); // assert that the speed decreases by 1
     }
-
     @Test
     public void disEngageGearTest() {
         Bike speedBike = new Bike();
@@ -130,7 +112,6 @@ public class BikeTest {
         speedBike.disEngageGear(0);             // when i disengage gear
         assertEquals(0, speedBike.checkGear()); // assert that the gear disengages
     }
-
     @Test
     public void putOffTest() {
         Bike goBike = new Bike();
@@ -139,8 +120,7 @@ public class BikeTest {
         goBike.accelerate(65);
         goBike.decelerate(0);
         goBike.disEngageGear(0);            // given the gear is disengaged
-        goBike.isOn(false);                 // when i turn off the bike
+        goBike.isOn(false);                 // when I turn off the bike
         assertFalse(goBike.checkState());        // assert that it has turned off
     }
-
 }
