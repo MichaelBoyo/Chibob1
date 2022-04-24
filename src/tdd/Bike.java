@@ -29,19 +29,6 @@ public class Bike {
 
     public void accelerate(int speed) {
         if (speed >= 0 && speed <= 20) {
-            this.speed = speed;
-        }
-        if (speed > 20 && speed <= 30) {
-            this.speed = speed;
-        }
-        if (speed > 30 && speed <= 40) {
-            this.speed = speed;
-        }
-        if (speed > 40) {
-            this.speed = speed;
-        }
-        // set gear
-        if (speed >= 0 && speed <= 20) {
             gearNumber = 1;
         }
         if (speed > 20 && speed <= 30) {
@@ -53,6 +40,7 @@ public class Bike {
         if (speed > 40) {
             gearNumber = 4;
         }
+        this.speed = speed;
     }
 
     public int getGearNumber() {
@@ -76,18 +64,7 @@ public class Bike {
     }
 
     public void decelerate(int decelerationSpeed) {
-        if (decelerationSpeed > 40) {
-            this.decelerationSpeed = decelerationSpeed;
-        }
-        if (decelerationSpeed > 30 && decelerationSpeed <= 40) {
-            this.decelerationSpeed = decelerationSpeed;
-        }
-        if (decelerationSpeed > 20 && decelerationSpeed <= 30) {
-            this.decelerationSpeed = decelerationSpeed;
-        }
-        if (decelerationSpeed >= 0 && decelerationSpeed <= 20) {
-            this.decelerationSpeed = decelerationSpeed;
-        }
+        this.decelerationSpeed = decelerationSpeed;
 
         if (decelerationSpeed > 40) {
             gearNumber = 4;

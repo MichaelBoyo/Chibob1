@@ -24,34 +24,17 @@ public class AirConditionerTest {
     public void increaseTempTest() {
         AirConditioner hiSense = new AirConditioner();
         hiSense.putOn(true);                           //my ac is on
-        hiSense.increaseTemp(16);                    // when I increase temperature
-        assertEquals(16, hiSense.getTemp());                      // it increases
+        hiSense.increaseTemp(5);
+        assertEquals(21, hiSense.getTemp());
     }
 
     @Test
     public void decreaseTempTest() {
         AirConditioner samsung = new AirConditioner();
         samsung.putOn(true);                          //my ac is on
-        samsung.increaseTemp(30);                   // when I increase temperature it increases
-        samsung.decreaseTemp(29);                   // when I reduce temperature
-        assertEquals(29, samsung.getTemp());                     // assert that it reduces
+        samsung.increaseTemp(1);                   // when I increase temperature it increases
+        samsung.decreaseTemp(1);                   // when I reduce temperature
+        assertEquals(16, samsung.getTemp());                     // assert that it reduces
 
-    }
-
-    @Test
-    public void increaseTempBeyond30Test() {
-        AirConditioner midea = new AirConditioner();
-        midea.putOn(true);                          //my ac is on
-        midea.increaseTemp(31);                   // when I increase the temperature more than 30
-        assertEquals(30, midea.getTemp());  // assert that temp remains 30
-    }
-
-    @Test
-    public void reduceTempBelow16Test() {
-        AirConditioner haierThermocool = new AirConditioner();
-        haierThermocool.putOn(true);                         //my ac is on
-        haierThermocool.increaseTemp(16);                  // when I increase temperature it increases
-        haierThermocool.decreaseTemp(13);                      // when I reduce temp less than 16
-        assertEquals(16, haierThermocool.getTemp()); // assert that temp remains 16
     }
 }
