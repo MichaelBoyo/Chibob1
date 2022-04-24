@@ -1,8 +1,8 @@
 package tdd;
 
 public class Bike {
-    private boolean state;
-    private int gear;
+    private boolean status;
+    private boolean gear;
     private int gearNumber;
     private int speed;
     private int decelerationSpeed;
@@ -10,23 +10,20 @@ public class Bike {
     private int decelerationSpeedRate;
 
     public void isOn(boolean type) {
-        state = type;
+        status = type;
     }
 
-    public boolean checkState() {
-        return state;
+    public boolean checkStatus() {
+        return status;
     }
 
-    public void engageGear(int type) {
+    public void engageGear(boolean type) {
         gear = type;
 
     }
 
-    public void disEngageGear(int type) {
-        gear = type;
-    }
 
-    public int checkGear() {
+    public boolean checkGearStatus() {
         return gear;
     }
 
@@ -62,9 +59,25 @@ public class Bike {
         return gearNumber;
     }
 
+    public int getIncrement() {
+        if (gearNumber == 1) {
+            speedRate = speed + 1;
+        }
+        if (gearNumber == 2) {
+            speedRate = speed + 2;
+        }
+        if (gearNumber == 3) {
+            speedRate = speed + 3;
+        }
+        if (gearNumber == 4) {
+            speedRate = speed + 4;
+        }
+        return speedRate;
+    }
+
     public void decelerate(int decelerationSpeed) {
         if (decelerationSpeed > 40) {
-                this.decelerationSpeed = decelerationSpeed;
+            this.decelerationSpeed = decelerationSpeed;
         }
         if (decelerationSpeed > 30 && decelerationSpeed <= 40) {
             this.decelerationSpeed = decelerationSpeed;
@@ -90,23 +103,7 @@ public class Bike {
         }
     }
 
-    public int getSpeedRate() {
-        if (gearNumber == 1) {
-            speedRate = speed + 1;
-        }
-        if (gearNumber == 2) {
-            speedRate = speed + 2;
-        }
-        if (gearNumber == 3) {
-            speedRate = speed + 3;
-        }
-        if (gearNumber == 4) {
-            speedRate = speed + 4;
-        }
-        return speedRate;
-    }
-
-    public int getDecelerationSpeedRate() {
+    public int getDecrement() {
         if (gearNumber == 1) {
             decelerationSpeedRate = decelerationSpeed - 1;
         }

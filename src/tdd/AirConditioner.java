@@ -1,49 +1,37 @@
 package tdd;
 
 public class AirConditioner {
-    private boolean state;
-    private boolean temp;
-
-    private int tempValue;
+    private boolean status;
+    private int temp;
 
     public void putOn(boolean type) {
-        state = type;
+        status = type;
 
     }
 
-    public boolean getState() {
-        return state;
+    public boolean getStatus() {
+        return status;
     }
 
-    public void putOff(boolean type) {
-        state = type;
-    }
-
-    public void increaseTemp(boolean type) {
-        temp = type;
-    }
-
-    public boolean getTemp() {
-        return temp;
-    }
-
-    public void decreaseTemp(boolean type) {
-        temp = type;
-    }
-
-    public void increaseTempValue(int value) {
+    public void increaseTemp(int value) {
         if (value > 30) {
-            tempValue = 30;
+            temp = 30;
+        }
+        if (value >= 16 && value <= 30) {
+            temp = value;
         }
     }
 
-    public int getTempValue() {
-        return tempValue;
-    }
-
-    public void reduceTempValue(int value) {
+    public void decreaseTemp(int value) {
         if (value < 16) {
-            tempValue = 16;
+            temp = 16;
         }
+        if (value >= 16 && value <= 30) {
+            temp = value;
+        }
+    }
+
+    public int getTemp() {
+        return temp;
     }
 }
