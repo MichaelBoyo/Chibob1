@@ -25,12 +25,7 @@ public class AirConditioner {
             temp = 16;
         }
     }
-
-
     public int getTemp() {
         return temp;
     }
-
-
-
 }

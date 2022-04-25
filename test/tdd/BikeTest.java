@@ -36,7 +36,6 @@ public class BikeTest {
         kawa.accelerate(20);                       // when I accelerate and my speed is between 0 and 20
         assertEquals(1, kawa.getGearNumber());  // assert that the bike enters gear 1
         assertEquals(21, kawa.getIncrement());  // assert that my speed changes by 1 point
-
     }
 
     @Test
@@ -137,7 +136,9 @@ public class BikeTest {
     }
 
     @Test
-    public void putOffTest() {
+    public void putOffTest()
+
+    {
         Bike goBike = new Bike();
         goBike.isOn(true);
         goBike.engageGear(true);
