@@ -3,8 +3,10 @@ package tdd;
 public class Bike {
     private boolean status;
     private boolean gear;
-    private int gearNumber;
     private int speed;
+    private boolean accelerate;
+    private int gearNumber;
+
     private int decelerationSpeed;
     private int speedRate;
     private int decelerationSpeedRate;
@@ -27,27 +29,36 @@ public class Bike {
         return gear;
     }
 
-    public void accelerate(int speed) {
-        if (speed >= 0 && speed <= 20) {
+    public void accelerate(boolean type) {
+        if (accelerate) speed =1;
+
+        if (accelerate && speed >= 0 && speed <= 20)
             gearNumber = 1;
-        }
-        if (speed > 20 && speed <= 30) {
+        speed = speed +1;
+
+        if (accelerate && speed > 20 && speed <= 30) {
             gearNumber = 2;
         }
-        if (speed > 30 && speed <= 40) {
+        if (accelerate && speed > 30 && speed <= 40) {
             gearNumber = 3;
         }
-        if (speed > 40) {
+        if (accelerate && speed > 40) {
             gearNumber = 4;
         }
-        this.speed = speed;
+        accelerate = type;
     }
+    public int getSpeed() {
+
+        return speed;
+    }
+
 
     public int getGearNumber() {
         return gearNumber;
     }
 
     public int getIncrement() {
+        int speed = 0;
         if (gearNumber == 1) {
             speedRate = speed + 1;
         }
@@ -94,5 +105,10 @@ public class Bike {
             decelerationSpeedRate = decelerationSpeed - 4;
         }
         return decelerationSpeedRate;
+    }
+
+
+    public boolean getAccelerationStatus() {
+        return accelerate;
     }
 }
