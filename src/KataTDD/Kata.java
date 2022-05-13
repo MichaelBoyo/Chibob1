@@ -1,5 +1,7 @@
 package KataTDD;
 
+import java.util.Arrays;
+
 import static java.lang.Math.round;
 
 public class Kata {
@@ -73,6 +75,15 @@ public class Kata {
         if (scoree >= 55) result = "pass";
         return result;
 
+    }
+    public static int factors(int number){
+        int factors =0;
+        for(int i =1; i<=number; i++){
+            if(number%i == 0){
+                factors = factors+1;
+            }
+        }
+        return factors;
     }
 }
 

@@ -101,4 +101,11 @@ public class KataTest {
         Kata ozumba = new Kata();
         assertEquals("pass", ozumba.setScoree(55));
     }
+    @Test
+    public void factorTest(){
+        int factors = Kata.factors(5);
+        assertEquals(2,factors);
+        factors = Kata.factors(10);
+        assertEquals(4,factors);
+    }
 }
